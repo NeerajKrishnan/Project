@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="mis_imei_form_view" model="ir.ui.view">
+            <field name="name">IMEI Form</field>
+            <field name="model">mis.imei</field>
+            <field name="arch" type="xml">
+                <form string="IMEI Form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="product_id"/>
+                            </group>
+                            <group>
+                                <field name="imei_number"/>
+                            </group>
+                            <group>
+                                 <field name="status"/>
+                            </group>
+                            <group>
+                                 <field name="store"/>
+                            </group>
+
+                            <group>
+                                 <field name="create_date"/>
+                            </group>
+
+			            </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="mis_imei_tree_view" model="ir.ui.view">
+            <field name="name">IMEI Tree</field>
+            <field name="model">mis.imei</field>
+            <field name="arch" type="xml">
+                <tree string="IMEI Tree">
+                    <field name="product_id"/>
+                    <field name="imei_number"/>
+		            <field name="status"/>
+                    <field name="store"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_mis_imei" model="ir.actions.act_window">
+            <field name="name">IMEI Details</field>
+            <field name="res_model">mis.imei</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Click to create new IMEI</p>
+            </field>
+        </record>
+
+        <record id="mis_imei_tracking_form_view" model="ir.ui.view">
+            <field name="name">IMEI Tracking Form</field>
+            <field name="model">mis.imei.tracking</field>
+            <field name="arch" type="xml">
+                <form string="IMEI Form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="imei_number"/>
+                            </group>
+                            <group>
+                                <field name="product_id"/>
+                            </group>
+
+                            <group>
+                                <field name="location"/>
+                            </group>
+
+                            <group>
+                                 <field name="create_date"/>
+                            </group>
+
+			            </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="mis_imei_tracking_tree_view" model="ir.ui.view">
+            <field name="name">IMEI Tracking Tree</field>
+            <field name="model">mis.imei.tracking</field>
+            <field name="arch" type="xml">
+                <tree string="IMEI Tree">
+                    <field name="imei_number"/>
+                    <field name="product_id"/>
+                    <field name="location"/>
+                    <field name="create_date"/>
+
+                </tree>
+            </field>
+        </record>
+        <record id="action_mis_imei_tracking" model="ir.actions.act_window">
+            <field name="name">IMEI Tracking</field>
+            <field name="res_model">mis.imei.tracking</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Click to create new IMEI Tracking</p>
+            </field>
+        </record>
+
+        <menuitem id="menu_mis_imei_invent_conf" name="IMEI Details" action="action_mis_imei"  sequence="20" parent="stock.menu_stock_inventory_control"/>
+        <menuitem id="menu_mis_imei_tracking_invent_conf" name="IMEI Tracking" action="action_mis_imei_tracking"  sequence="30" parent="stock.menu_stock_inventory_control"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_inherit_imei_in_sale" model="ir.ui.view">
+        <field name="name">sale.order.form.imei.number.inherit.l10n.in.sale</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_cancel']" position="before">
+                <button string="IMEI"  name='action_imei_scan_sale_order' type='object' class="btn-secondary"  />
+
+
+            </xpath>
+        </field>
+    </record>
+
+
+        <record id="view_order_imei_number_sale" model="ir.ui.view">
+        <field name="name">view.order.imei.number.sale</field>
+        <field name="model">mis.imei</field>
+        <field name="inherit_id" ref="imei_numbers.mis_imei_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='store']" position="before">
+              <field name="active" invisible="1"></field>
+
+
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="imei_scan_sale_order_form_view" model="ir.ui.view">
+            <field name="name">imei.scan.sale.order.form.view</field>
+            <field name="model">imei.scan.sale.order</field>
+            <field name="arch" type="xml">
+                <form string="IMEI Number">
+                    <sheet>
+                        <group>
+
+<!--                            <field name="product_id_domain" invisible="1"></field>-->
+
+
+                                                    <field name="sale_order_id"></field>
+                            <field name="sale_id"></field>
+                                                    <field name="sale_order_line_id" domain="[('order_id','=',sale_id)]"></field>
+                                                    <field name="product_qty"></field>
+<!--                            <field name="check_count"></field>-->
+
+                            <button name="generate_imei_number"  type="object" string="Submit" ></button>
+                            <field name="product_id"></field>
+
+                        </group>
+
+                        <field name="imei_numbers"  ></field>
+
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>
